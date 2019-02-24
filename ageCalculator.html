@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		age calculator
+	</title>
+</head>
+<body>
+<input type="date" name="" id="date">
+<button onclick="getAge()"> alert your age</button>
+<script type="text/javascript">
+	function getAge() {
+		var todayDate=new Date();
+		var getTodayTime=todayDate.getTime();
+		console.log(getTodayTime);
+		var yourDateOfBirth=document.getElementById("date").value;
+		console.log(yourDateOfBirth);
+		//var yourDateOfBirth=prompt("enter you date of birth");
+		var birthObj=new Date(yourDateOfBirth);
+		var getBithT=birthObj.getTime();
+		console.log(getBithT);
+		var ageInMs=getTodayTime-getBithT;
+		var cutMs=ageInMs/1000;
+		var getYearsS=cutMs/(60*60*24);
+		var final=getYearsS/(30*12)
+		console.log(Math.round(final));
+	}
+</script>
+</body>
+</html>
